@@ -1,9 +1,13 @@
 (function(getGitOrgs) {
   'use strict';
 
-  var ghOrgs = 'https://api.github.com/users/jisaacks/orgs';
-
-
+  var ghOrgs = 'data.json';
+  var loginAvatar = [];
+  getGitOrgs.pushToArray = function pushToArray(element){
+    loginAvatar.push( {login: element.login, avatar: element.avatar_url } );
+    console.log(loginAvatar);
+    return loginAvatar;
+  };
 
   getGitOrgs.getOrgsData = function getOrgsData() {
 
@@ -12,7 +16,14 @@
     url: ghOrgs,
     dataType: 'json',
     success: function showGHOrgs(data) {
-      console.log( data );
+      console.log(data);
+      data.forEach(getGitOrgs.renderItem
+        // loginAvatar.push( {login: element.login, avatar: element.avatar_url } );
+        // console.log(loginAvatar);
+        // getGitOrgs.addOrgItems(element);
+        // console.log(element);
+      );
+
 
     },
     error: function handleErrors(xhr) {

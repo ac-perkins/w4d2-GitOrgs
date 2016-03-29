@@ -69,11 +69,37 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* line 1, ../sass/_githuborgs.scss */
 main {
-  width: 75%;
+  width: 60%;
   margin: 0 auto;
 }
 
-/* line 6, ../sass/_githuborgs.scss */
+/* line 11, ../sass/_githuborgs.scss */
+li {
+  border: 2px solid #E4E4E4;
+  border-radius: 5px;
+  background-color: #F0F0F0;
+  height: 80px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 3% 0;
+}
+
+/* line 21, ../sass/_githuborgs.scss */
+.org_name {
+  color: #AAAAAA;
+  font-size: 3em;
+}
+
+/* line 27, ../sass/_githuborgs.scss */
 .getOrgsBtn {
   margin: 0 auto;
+}
+
+/* line 31, ../sass/_githuborgs.scss */
+.avatar_img {
+  height: 100%;
+  border-radius: 10px;
+  float: left;
+  margin: 0 2%;
+  vertical-align: middle;
 }
