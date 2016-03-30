@@ -1,6 +1,5 @@
 main {
-  // border: 1px solid #E4E4E4;
-  width: 60%;
+  width: 50%;
   margin: 10% auto;
 }
 
@@ -17,7 +16,7 @@ li {
   height: 80px;
   padding-top: 10px;
   padding-bottom: 10px;
-  margin: 3% 0;
+  margin: 2% 0;
   line-height: 75px;
 }
 
@@ -29,8 +28,23 @@ input {
   font-size: 1.5em;
 }
 
+input:focus {
+  outline: none;
+}
+
 .org_name {
   color: #AAAAAA;
+  font-size: 3.2em;
+  text-shadow: 1px 1px 0px #fff;
+}
+
+.user {
+  border: 2px solid #6F706C;
+}
+
+.user_name {
+  text-align: center;
+  color: #000;
   font-size: 3.2em;
   text-shadow: 1px 1px 0px #fff;
 }
@@ -38,6 +52,15 @@ input {
 .getOrgsBtn {
   margin: 0 auto;
   font-size: 1.5em;
+}
+
+.user_img {
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  float: right;
+  margin: 0 3%;
+  vertical-align: middle;
 }
 
 .avatar_img {

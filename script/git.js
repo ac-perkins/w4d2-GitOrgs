@@ -1,7 +1,7 @@
 (function(getGitOrgs) {
   'use strict';
 
-  // var ghOrgs = 'https://api.github.com/users/jisaacks/orgs';
+  var userPlusAvatar = {};
   var loginAvatar = [];
   getGitOrgs.pushToArray = function pushToArray(element){
     loginAvatar.push( {login: element.login, avatar: element.avatar_url } );
@@ -13,15 +13,23 @@
 
   $.ajax({
     type: 'GET',
+    url: getGitOrgs.ghUser,
+    dataType: 'json',
+    success: function showGHUser(data) {
+      userPlusAvatar.name = data.name;
+      userPlusAvatar.avatar_url = data.avatar_url;
+      getGitOrgs.renderUser(data);
+    },
+  });
+
+  $.ajax({
+    type: 'GET',
     url: getGitOrgs.ghOrgs,
     dataType: 'json',
     success: function showGHOrgs(data) {
-      console.log(data);
-      console.log(typeof data);
       data.forEach(getGitOrgs.renderItem);
       $('aside')
         .text('');
-
     },
     error: function handleErrors(xhr) {
       console.log( xhr );
@@ -33,8 +41,6 @@
     },
   });
 };
-
-
 
 window.getGitOrgs = getGitOrgs;
 
