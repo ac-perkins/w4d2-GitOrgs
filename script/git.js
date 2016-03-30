@@ -1,7 +1,7 @@
 (function(getGitOrgs) {
   'use strict';
 
-  var ghOrgs = 'data.json';
+  // var ghOrgs = 'https://api.github.com/users/jisaacks/orgs';
   var loginAvatar = [];
   getGitOrgs.pushToArray = function pushToArray(element){
     loginAvatar.push( {login: element.login, avatar: element.avatar_url } );
@@ -13,32 +13,24 @@
 
   $.ajax({
     type: 'GET',
-    url: ghOrgs,
+    url: getGitOrgs.ghOrgs,
     dataType: 'json',
     success: function showGHOrgs(data) {
       console.log(data);
-      data.forEach(getGitOrgs.renderItem
-        // loginAvatar.push( {login: element.login, avatar: element.avatar_url } );
-        // console.log(loginAvatar);
-        // getGitOrgs.addOrgItems(element);
-        // console.log(element);
-      );
-
+      console.log(typeof data);
+      data.forEach(getGitOrgs.renderItem);
+      $('aside')
+        .text('');
 
     },
     error: function handleErrors(xhr) {
       console.log( xhr );
 
       if (xhr.status === 404) {
-        $('.message')
-          .removeClass('success')
-          .addClass('error')
-          .text('You messed up. Try a proper GitHub org');
+        $('aside')
+          .text("Please enter a real user's account and try again.");
       }
     },
-    complete: function requestDone() {
-      console.log( 'All done!');
-    }
   });
 };
 

@@ -70,10 +70,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 1, ../sass/_githuborgs.scss */
 main {
   width: 60%;
-  margin: 0 auto;
+  margin: 10% auto;
 }
 
-/* line 11, ../sass/_githuborgs.scss */
+/* line 7, ../sass/_githuborgs.scss */
+aside {
+  text-align: center;
+  margin: 5% 0;
+  font-size: 1.2em;
+}
+
+/* line 13, ../sass/_githuborgs.scss */
 li {
   border: 2px solid #E4E4E4;
   border-radius: 5px;
@@ -82,24 +89,37 @@ li {
   padding-top: 10px;
   padding-bottom: 10px;
   margin: 3% 0;
+  line-height: 75px;
 }
 
-/* line 21, ../sass/_githuborgs.scss */
+/* line 24, ../sass/_githuborgs.scss */
+form {
+  text-align: center;
+}
+
+/* line 28, ../sass/_githuborgs.scss */
+input {
+  font-size: 1.5em;
+}
+
+/* line 32, ../sass/_githuborgs.scss */
 .org_name {
   color: #AAAAAA;
-  font-size: 3em;
+  font-size: 3.2em;
+  text-shadow: 1px 1px 0px #fff;
 }
 
-/* line 27, ../sass/_githuborgs.scss */
+/* line 38, ../sass/_githuborgs.scss */
 .getOrgsBtn {
   margin: 0 auto;
+  font-size: 1.5em;
 }
 
-/* line 31, ../sass/_githuborgs.scss */
+/* line 43, ../sass/_githuborgs.scss */
 .avatar_img {
   height: 100%;
   border-radius: 10px;
   float: left;
-  margin: 0 2%;
+  margin: 0 3%;
   vertical-align: middle;
 }
